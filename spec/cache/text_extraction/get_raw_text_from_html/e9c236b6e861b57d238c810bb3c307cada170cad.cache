@@ -1,0 +1,17 @@
+u:Typhoeus::Response--- 
+:headers: |
+  HTTP/1.1 100 Continue
+  
+  HTTP/1.1 404 Not Found
+  Server: apgrid
+  Date: Thu, 29 Apr 2010 23:28:15 GMT
+  Connection: keep-alive
+  Content-Length: 95
+  
+
+:code: 404
+:requested_http_method: 
+:requested_url: 
+:start_time: 
+:time: 66.459182
+:body: ""
