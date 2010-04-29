@@ -12,11 +12,13 @@ module AlchemyApi
   @api_key = nil
   @base_uri = "http://access.alchemyapi.com/calls/url"
   @base_html_uri = "http://access.alchemyapi.com/calls/html"
+  @base_text_uri = "http://access.alchemyapi.com/calls/text"
 
   class << self
     attr_accessor :api_key
     attr_accessor :base_uri
     attr_accessor :base_html_uri
+    attr_accessor :base_text_uri
   end
 
   class UnknownError < StandardError; end
