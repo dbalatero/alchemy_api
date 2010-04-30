@@ -3,6 +3,8 @@ module AlchemyApi
     defaults do
       cache_timeout 999999
       user_agent 'Ruby AlchemyApi'
+      params :apikey => AlchemyApi.api_key,
+             :outputMode => 'json'
     end
 
     def self.check_json_for_errors_and_raise!(json)
