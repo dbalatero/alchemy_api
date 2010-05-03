@@ -72,13 +72,12 @@ module AlchemyApi
     end
 
     def self.get_title_from_url_handler(response)
-      json = JSON.parse(response.body)
-      check_json_for_errors_and_raise!(json)
+      json = get_json(response)
       ExtractedTitle.new(json['url'], json['title'])
     end
 
     def self.get_text_from_url_handler(response)
-      json = JSON.parse(response.body)
+      json = get_json(response)
       check_json_for_errors_and_raise!(json)
       ExtractedText.new(json['url'], json['text'])
     end

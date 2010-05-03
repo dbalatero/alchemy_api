@@ -39,8 +39,7 @@ module AlchemyApi
     end
 
     def self.get_categorization_handler(response)
-      json = JSON.parse(response.body)
-      check_json_for_errors_and_raise!(json)
+      json = get_json(response)
       Category.new(json['url'], json['category'],
                    json['score'].to_f)
     end

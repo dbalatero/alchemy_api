@@ -7,6 +7,12 @@ module AlchemyApi
              :outputMode => 'json'
     end
 
+    def self.get_json(response)
+      json = JSON.parse(response.body)
+      check_json_for_errors_and_raise!(json)
+      json
+    end
+
     def self.check_json_for_errors_and_raise!(json)
       if json['status'] == 'ERROR'
         case json['statusInfo']
