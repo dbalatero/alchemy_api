@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "alchemy_api"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Provides a client API library for AlchemyAPI's awesome NLP services. Allows you to make parallel or serial requests.}
+    gem.description = %Q{Provides a client API library for AlchemyAPI's awesome NLP services. Allows you to make parallel or serial requests.}
     gem.email = "dbalatero@gmail.com"
     gem.homepage = "http://github.com/dbalatero/alchemy_api"
     gem.authors = ["David Balatero"]
