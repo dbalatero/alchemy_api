@@ -26,4 +26,5 @@ module AlchemyApi
   class PageIsNotValidHtmlError < StandardError; end
   class ContentExceedsMaxLimitError < StandardError; end
   class InvalidHtmlError < StandardError; end
+  class ContentIsEmptyError < StandardError; end
 end

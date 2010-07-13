@@ -28,6 +28,8 @@ module AlchemyApi
           raise ContentExceedsMaxLimitError, "The page at #{json['url']} is larger than 600KB!"
         when 'invalid-html'
           raise InvalidHtmlError, "The HTML sent was invalid!"
+        when 'content-is-empty'
+          raise ContentIsEmptyError, "The content you provided was empty!"
         else
           raise UnknownError, "Got an unknown error: #{json['statusInfo']}"
         end
