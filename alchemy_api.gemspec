@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{alchemy_api}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["David Balatero"]
-  s.date = %q{2010-05-17}
+  s.date = %q{2010-09-12}
   s.description = %q{Provides a client API library for AlchemyAPI's awesome NLP services. Allows you to make parallel or serial requests.}
   s.email = %q{dbalatero@gmail.com}
   s.extra_rdoc_files = [
@@ -20,18 +20,22 @@ Gem::Specification.new do |s|
   s.files = [
     ".document",
      ".gitignore",
+     "CHANGELOG.markdown",
      "LICENSE",
      "README.markdown",
      "Rakefile",
      "VERSION",
+     "alchemy_api.gemspec",
      "lib/alchemy_api.rb",
      "lib/alchemy_api/base.rb",
      "lib/alchemy_api/categorization.rb",
+     "lib/alchemy_api/concept_tagging.rb",
      "lib/alchemy_api/language_detection.rb",
      "lib/alchemy_api/term_extraction.rb",
      "lib/alchemy_api/text_extraction.rb",
      "spec/alchemy_api/base_spec.rb",
      "spec/alchemy_api/categorization_spec.rb",
+     "spec/alchemy_api/concept_tagging_spec.rb",
      "spec/alchemy_api/language_detection_spec.rb",
      "spec/alchemy_api/term_extraction_spec.rb",
      "spec/alchemy_api/text_extraction_spec.rb",
@@ -39,6 +43,9 @@ Gem::Specification.new do |s|
      "spec/cache/categorization/get_categorization_from_html/ddc3cf50efe5bd5c2159abfb49121cfa2314ca88.cache",
      "spec/cache/categorization/get_categorization_from_text/8b476a3b532afd2da646b145e9dde07570c27352.cache",
      "spec/cache/categorization/get_categorization_from_url/7536a34e1d54a95d8ee07d2a98036362761e1621.cache",
+     "spec/cache/concept_tagging/get_concepts_from_html/7da223513abcfe2fd3d253fff60894829f858667.cache",
+     "spec/cache/concept_tagging/get_concepts_from_text/3e56901d7f01729b79ef73fc6d34fa97148eb35c.cache",
+     "spec/cache/concept_tagging/get_concepts_from_url/488c7dbb9b844b072cb284425b4ca8356b08dd15.cache",
      "spec/cache/language_detection/get_language_from_html/0faf7be978647b611d9c59e1efa497dd76e542f5.cache",
      "spec/cache/language_detection/get_language_from_text/1ad3f50c1fda37000e24c196f12212ea9d536cb4.cache",
      "spec/cache/language_detection/get_language_from_url/d077a95e60be0876bb7650ad213f5f43e83454d4.cache",
@@ -65,6 +72,7 @@ Gem::Specification.new do |s|
   s.test_files = [
     "spec/alchemy_api/base_spec.rb",
      "spec/alchemy_api/categorization_spec.rb",
+     "spec/alchemy_api/concept_tagging_spec.rb",
      "spec/alchemy_api/language_detection_spec.rb",
      "spec/alchemy_api/term_extraction_spec.rb",
      "spec/alchemy_api/text_extraction_spec.rb",
@@ -78,13 +86,16 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
       s.add_development_dependency(%q<rspec>, [">= 1.2.9"])
+      s.add_development_dependency(%q<typhoeus_spec_cache>, [">= 0.2.2"])
       s.add_runtime_dependency(%q<monster_mash>, [">= 0.1.1"])
     else
       s.add_dependency(%q<rspec>, [">= 1.2.9"])
+      s.add_dependency(%q<typhoeus_spec_cache>, [">= 0.2.2"])
       s.add_dependency(%q<monster_mash>, [">= 0.1.1"])
     end
   else
     s.add_dependency(%q<rspec>, [">= 1.2.9"])
+    s.add_dependency(%q<typhoeus_spec_cache>, [">= 0.2.2"])
     s.add_dependency(%q<monster_mash>, [">= 0.1.1"])
   end
 end
