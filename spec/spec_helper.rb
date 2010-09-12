@@ -4,6 +4,8 @@ require 'alchemy_api'
 require 'spec'
 require 'spec/autorun'
 
+AlchemyApi.api_key = '3468d2194732163c69b0ac76079ca9f9c4193226'
+
 require 'typhoeus_spec_cache'
 
 Spec::Runner.configure do |config|
