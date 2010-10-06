@@ -6,6 +6,14 @@ Dir.glob(File.dirname(__FILE__) + "/**/*.rb").each do |f|
   require f
 end
 
+$LOAD_PATH.unshift(File.dirname(__FILE__))
+require 'alchemy_api/base'
+require 'alchemy_api/categorization'
+require 'alchemy_api/concept_tagging'
+require 'alchemy_api/language_detection'
+require 'alchemy_api/term_extraction'
+require 'alchemy_api/text_extraction'
+
 module AlchemyApi
   @api_key = nil
   @base_uri = "http://access.alchemyapi.com/calls/url"
