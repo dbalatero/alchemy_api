@@ -1,4 +1,4 @@
-Current Master
+0.1.2
 --------------
 * Fixed load order error in lib/alchemy_api.rb
 

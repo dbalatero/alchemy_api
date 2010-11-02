@@ -2,10 +2,6 @@ require 'ostruct'
 require 'json'
 require 'monster_mash'
 
-Dir.glob(File.dirname(__FILE__) + "/**/*.rb").each do |f|
-  require f
-end
-
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'alchemy_api/base'
 require 'alchemy_api/categorization'
