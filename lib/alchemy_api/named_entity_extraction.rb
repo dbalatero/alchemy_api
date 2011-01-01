@@ -1,5 +1,4 @@
 module AlchemyApi
-  Entity = Struct.new(:text, :type, :relevance, :count)
   NamedEntitiesResult = Struct.new(:entities, :language, :url, :source_text)
 
   class NamedEntityExtraction < Base
@@ -18,10 +17,8 @@ module AlchemyApi
 
     def self.get_ranked_entities_handler(response)
       json = get_json(response)
-      entities = json['entities'].each do |e|
-        Entity.new(e['text'], e['type'], e['relevance'].to_f, e['count'])
-      end
-      NamedEntitiesResult.new(entities, json['language'],
+
+      NamedEntitiesResult.new(json['entities'], json['language'],
                                json['url'], json['text'])
     end
   end
