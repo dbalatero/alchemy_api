@@ -1,7 +1,6 @@
 # TODO: add support for linkedData return fields
 module AlchemyApi
   ConceptTaggingResult = Struct.new(:concepts, :language, :url, :source_text)
-  Concept = Struct.new(:text, :relevance)
 
   class ConceptTagging < Base
     # http://www.alchemyapi.com/api/concept/textc.html
@@ -51,10 +50,8 @@ module AlchemyApi
 
     def self.get_concepts_handler(response)
       json = get_json(response)
-      concepts = json['concepts'].map do |c|
-        Concept.new(c['text'], c['relevance'].to_f)
-      end
-      ConceptTaggingResult.new(concepts, json['language'], json['url'], json['text'])
+
+      ConceptTaggingResult.new(json['concepts'], json['language'], json['url'], json['text'])
     end
   end
 end

@@ -1,6 +1,5 @@
 module AlchemyApi
   TermExtractionResult = Struct.new(:keywords, :language, :url, :source_text)
-  Keyword = Struct.new(:text, :relevance)
 
   class TermExtraction < Base
     post(:get_ranked_keywords_from_html) do |html, *args|
@@ -46,10 +45,8 @@ module AlchemyApi
 
     def self.get_ranked_keywords_handler(response)
       json = get_json(response)
-      keywords = json['keywords'].map do |kw|
-        Keyword.new(kw['text'], kw['relevance'].to_f)
-      end
-      TermExtractionResult.new(keywords, json['language'],
+
+      TermExtractionResult.new(json['keywords'], json['language'],
                                json['url'], json['text'])
     end
   end
